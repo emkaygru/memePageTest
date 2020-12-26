@@ -96,13 +96,16 @@ function init() {
       img.src = reader.result;
 
       // call the generate meme function to add the image and input text from user
-      generateMeme(
-        img,
-        topTextInput.value,
-        bottomTextInput.value,
-        topTextSizeInput.value,
-        bottomTextSizeInput.value
-      );
+      img.onload = () => {
+        generateMeme(
+          img,
+          topTextInput.value,
+          bottomTextInput.value,
+          topTextSizeInput.value,
+          bottomTextSizeInput.value
+        );
+      }
+
     };
 
     reader.readAsDataURL(imageInput.files[0]);
