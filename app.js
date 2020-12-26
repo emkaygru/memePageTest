@@ -5,67 +5,8 @@ let topTextInput,
   imageInput,
   generateBtn,
   canvas,
-  ctx; //
-//   topTextSize, bottomTextSize
-// function generateMeme(img, topText, bottomText) {
-//   let fontSize;
+  ctx;
 
-//   topText.toUpperCase();
-//   bottomText.toUpperCase();
-
-//   // save canvas to images
-//   canvas.width = img.width;
-//   canvas.height = img.height;
-
-//   // clear the canvas styling and draw the image in the center of the canvas
-//   ctx.clearRect(0, 0, canvas.width, canvas.height);
-//   ctx.drawImage(img, 0, 0);
-
-//   // font styling
-//   ctx.fillStyle = "white";
-//   ctx.strokeStyle = "black";
-//   ctx.textAlign = "center";
-//   ctx.toUpperCase = true;
-
-//   // top Text Font size
-//   fontSize = canvas.width / 15;
-//   ctx.font = fontSize + "px Impact";
-//   ctx.lineWidth = fontSize / 20;
-
-//   // bottom text font size
-//   fontSize = canvas.width / 15;
-//   ctx.font = fontSize + "px Impact";
-//   ctx.lineWidth = fontSize / 20;
-
-//   // top text -- for each for two rows of text
-//   ctx.textBaseline = "top";
-//   topText.split("\n").forEach((t, i) => {
-//     ctx.fillText(t, canvas.width / 2, i * fontSize, canvas.width);
-//     ctx.strokeText(t, canvas.width / 2, i * fontSize, canvas.width);
-//   });
-
-//   // bottom text -- for each for two rows of text
-//   ctx.textBaseline = "bottom";
-//   bottomText
-//     .split("\n")
-//     .reverse()
-//     .forEach((t, i) => {
-//       ctx.fillText(
-//         t,
-//         canvas.width / 2,
-//         canvas.height - i * fontSize,
-//         canvas.width
-//       );
-//       ctx.strokeText(
-//         t,
-//         canvas.height / 2,
-//         canvas.height - i * fontSize,
-//         canvas.width
-//       );
-//     });
-// }
-
-// initialization function
 
 function generateMeme(img, topText, bottomText, topTextSize, bottomTextSize) {
   let fontSize;
