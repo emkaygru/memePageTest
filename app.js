@@ -11,6 +11,7 @@ let topTextInput,
 function generateMeme(img, topText, bottomText, topTextSize, bottomTextSize) {
   let fontSize;
 
+
   // Size canvas to image
   canvas.width = img.width;
   canvas.height = img.height;
@@ -19,6 +20,8 @@ function generateMeme(img, topText, bottomText, topTextSize, bottomTextSize) {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   // Draw main image
   ctx.drawImage(img, 0, 0);
+
+
 
   // Text style: white with black borders
   ctx.fillStyle = "white";
@@ -78,6 +81,7 @@ function init() {
   generateBtn = document.getElementById("generate-btn");
   canvas = document.getElementById("meme-canvas");
   ctx = canvas.getContext("2d");
+
 
   // set canvas to zero so that canvas is the user's upload size
   canvas.width = canvas.height = 0;
