@@ -116,3 +116,12 @@ function init() {
 }
 
 init();
+let memeIt;
+
+memeIt.addEventListener("click", (e, id) => {
+  e.preventDefault();
+
+  $.get("/api/memes/" + id, (data) => {
+    img.val(data.img);
+  });
+});
