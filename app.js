@@ -7,10 +7,8 @@ let topTextInput,
   canvas,
   ctx;
 
-
 function generateMeme(img, topText, bottomText, topTextSize, bottomTextSize) {
   let fontSize;
-
 
   // Size canvas to image
   canvas.width = img.width;
@@ -20,8 +18,6 @@ function generateMeme(img, topText, bottomText, topTextSize, bottomTextSize) {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   // Draw main image
   ctx.drawImage(img, 0, 0);
-
-
 
   // Text style: white with black borders
   ctx.fillStyle = "white";
@@ -82,12 +78,12 @@ function init() {
   canvas = document.getElementById("meme-canvas");
   ctx = canvas.getContext("2d");
 
-
   // set canvas to zero so that canvas is the user's upload size
   canvas.width = canvas.height = 0;
 
   // use the filer reader API
-  generateBtn.addEventListener("click", () => {
+  generateBtn.addEventListener("click", (e) => {
+    e.preventDefault();
     let reader = new FileReader();
     // on load upload the user's image
     reader.onload = () => {
@@ -104,11 +100,18 @@ function init() {
           topTextSizeInput.value,
           bottomTextSizeInput.value
         );
-      }
-
+      };
     };
 
     reader.readAsDataURL(imageInput.files[0]);
+    const newMeme = $.ajax("/api/memes", {
+      type: "POST",
+      data: newMeme,
+    }).then(function () {
+      console.log("created new meme");
+      // Reload the page to get the updated list
+      location.reload();
+    });
   });
 }
 
